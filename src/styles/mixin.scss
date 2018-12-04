@@ -1,0 +1,90 @@
+@function tint($color, $weight) {
+	@return mix($color, white, $weight);
+}
+
+@function shade($color, $weight) {
+	@return mix($color, black, $weight);
+}
+
+/* color */
+$red: #db1011;
+$blue: #108ee9;
+$purple: #7265e6;
+$cyan: #00a2ae;
+$green: #00a854;
+$pink: #f5317f;
+$orange: #f56a00;
+$yellow: #ffbf00;
+$white: #fff;
+$black: #000;
+$gray-333: #333;
+$gray-aaa: #aaa;
+$gray-ccc: #ccc;
+$gray-ddd: #ddd;
+$gray-eee: #eee;
+$gray-f3: #f3f3f3;
+$gray-f4: #f4f4f4;
+$gray-f7: #f7f7f7;
+$gray-f8: #f8f8f8;
+$gray-f9: #f9f9f9;
+/* 初始化默认颜色配置 */
+$text-color: $black;
+$body-background: $white;
+$primary-color: $red;
+$link-color: $black;
+$link-hover-decoration: $black;
+$link-hover-color: $primary-color;
+$link-active-color: $primary-color;
+$disabled-color: $gray-aaa;
+$border-color: $gray-ddd;
+$shadow-color: $gray-ddd;
+
+/* 字体 */
+$font-family: "Microsoft Yahei", SimHei, "Helvetica Neue", "PingFangHK-Light", "Heiti SC", "Hiragino Sans GB", "Microsoft JhengHei", "WenQuanYi Micro Hei", "Droid Sans", "Roboto", Helvetica, Tahoma, Arial, "sans-serif";
+$code-family: Consolas, Menlo, Courier, monospace;
+/* size */
+$font-size-base: 14px;
+$bodyWidth: 1200px;
+$colWidth: floor($bodyWidth /24);
+$headerHeight: 60px;
+
+/* mixins */
+@mixin wh($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin ht-lineHt($height) {
+	height: $height;
+	line-height: $height;
+}
+
+@mixin square($width) {
+	@include wh($width, $width);
+}
+
+@mixin opacity($opacity:1) {
+	$opacityPercentage: $opacity * 100;
+	filter: alpha(opacity= #{$opacityPercentage});
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+}
+
+@mixin clearfix() {
+	zoom: 1;
+	&:before, &:after {
+		content: '.';
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		font-size: 0;
+		line-height: 0;
+		width: 0;
+		height: 0;
+	}
+
+	&:after {
+		clear: both;
+	}
+}

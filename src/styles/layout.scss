@@ -1,0 +1,85 @@
+@import "mixin";
+
+/*
+  页面布局
+*/
+body {
+	min-width: $bodyWidth;
+}
+
+/* `Container
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 {
+	margin-left: auto;
+	margin-right: auto;
+	width: $bodyWidth;
+}
+
+/* `Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+@for $i from 1 through 24 {
+	.grid_#{$i} {
+		display: block;
+		float: left;
+		margin-left: 0px;
+		margin-right: 0px;
+
+		.container_24 & {
+			width: $colWidth*$i;
+		}
+	}
+	.prefix_#{$i} {
+		padding-left: $colWidth*$i;
+	}
+	.suffix_#{$i} {
+		padding-right: $colWidth*$i;
+	}
+	.push_#{$i} {
+		position: relative;
+		left: $colWidth*$i;
+	}
+	.pull_#{$i} {
+		position: relative;
+		left: -$colWidth*$i;
+	}
+}
+
+/* `Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+	margin-right: 0;
+}
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+.container_24:before,
+.container_24:after {
+	content: '.';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	height: 0;
+}
+
+.container_24:after {
+	clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.container_24 {
+	zoom: 1;
+}

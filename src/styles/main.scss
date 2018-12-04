@@ -1,0 +1,23 @@
+@import "mixin";
+@import "normalize";
+@import "base";
+@import "layout";
+/*
+	// Google Fonts
+	font-family: 'Kumar One Outline', cursive;
+	font-family: 'Chakra Petch', sans-serif;
+	font-family: 'Sedgwick Ave', cursive;
+	font-family: 'Dosis', sans-serif;
+	font-family: 'Indie Flower', cursive;
+	font-family: 'Gamja Flower', cursive;
+	font-family: 'Pacifico', cursive;
+	font-family: 'Dancing Script', cursive;
+	font-family: 'Great Vibes', cursive;
+	font-family: 'Orbitron', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch:400,500,600,700|Dancing+Script:400,700|Dosis|Gamja+Flower|Great+Vibes|Indie+Flower|Kumar+One+Outline|Orbitron:400,500,700,900|Pacifico|Sedgwick+Ave');
+
+@font-face {
+	font-family: 'Kumar One Outline';
+	src: url('../assets/fonts/Kumar_One_Outline/KumarOneOutline-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
