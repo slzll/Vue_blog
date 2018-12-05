@@ -1,9 +1,11 @@
 <template>
-  <header class="page_header" :class="isTransparent?'is-transparent':'not-transparent'">
+  <header class="page_header">
 	<div class="container">
 	  <span class="logo">SLZLL</span>
 	  <div class="nav">
 		<router-link to="/">Home</router-link>
+		|
+		<router-link to="/category">Category</router-link>
 		|
 		<router-link to="/about">About</router-link>
 	  </div>
@@ -13,28 +15,20 @@
 
 <script>
   export default {
-    name: 'Header',
-    data() {
-      return {
-        isTransparent: true
-      };
-    },
-    mounted() {
-
-    }
+    name: 'Header'
   };
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
   @import "../styles/mixin";
 
   .page_header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
 	display: flex;
 	align-items: center;
 	height: $headerHeight;
+	background-color: $white;
+	border-bottom: 1px solid $border-color;
+	box-shadow: 0 0 20px 0 $shadow-color;
+
 
 	.container {
 	  display: flex;
@@ -47,6 +41,7 @@
 		font-family: 'Kumar One Outline', cursive;
 		font-size: 24px;
 		font-weight: bold;
+		color: #000;
 	  }
 
 	  .nav {
@@ -54,40 +49,8 @@
 		text-align: center;
 
 		a {
+		  margin: 0 10px;
 		  font-weight: bold;
-		}
-	  }
-	}
-
-	&.is-transparent {
-	  background-color: transparent;
-
-	  .logo {
-		color: $white;
-	  }
-
-	  .nav {
-		a {
-		  color: $white;
-
-		  &.router-link-exact-active {
-			color: $primary-color;
-		  }
-		}
-	  }
-
-	}
-
-	&.not-transparent {
-	  border-bottom: 1px solid $border-color;
-	  box-shadow: 0 0 10px 5px $shadow-color;
-
-	  .logo {
-		color: #000;
-	  }
-
-	  .nav {
-		a {
 		  color: #2c3e50;
 
 		  &.router-link-exact-active {
