@@ -1,5 +1,7 @@
 # blog
 
+![](https://travis-ci.org/slzll/vue-blog.svg?branch=master)
+
 ## Project setup
 ```
 yarn install
