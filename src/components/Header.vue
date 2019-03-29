@@ -14,9 +14,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Header'
-  };
+export default {
+  name: 'Header'
+}
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
   @import "../styles/mixin";
@@ -28,7 +28,6 @@
 	background-color: $white;
 	border-bottom: 1px solid $border-color;
 	box-shadow: 0 0 20px 0 $shadow-color;
-
 
 	.container {
 	  display: flex;

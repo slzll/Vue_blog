@@ -1,11 +1,11 @@
 module.exports = {
   root: true,
   env: {
-    node: true,
+    node: true
   },
-  extends: [
+  'extends': [
     'plugin:vue/essential',
-    '@vue/airbnb',
+    '@vue/standard'
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -16,6 +16,6 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 'off'
   },
   parserOptions: {
-    parser: 'babel-eslint',
-  },
+    parser: 'babel-eslint'
+  }
 };
