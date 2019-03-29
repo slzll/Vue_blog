@@ -6,4 +6,3 @@ install:
   - yarn install
 script:
   - yarn test:unit
-  - yarn build
