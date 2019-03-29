@@ -7,14 +7,14 @@
 </template>
 
 <script>
-  import ArticleItem from '@/components/ArticleItem.vue';
+import ArticleItem from '@/components/ArticleItem.vue'
 
-  export default {
-    name: 'ArticleList',
-    components: {
-      ArticleItem
-    }
-  };
+export default {
+  name: 'ArticleList',
+  components: {
+    ArticleItem
+  }
+}
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>

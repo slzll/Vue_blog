@@ -5,14 +5,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'Footer',
-    data() {
-      return {
-        thisYear: new Date().getFullYear()
-      };
+export default {
+  name: 'Footer',
+  data () {
+    return {
+      thisYear: new Date().getFullYear()
     }
-  };
+  }
+}
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>

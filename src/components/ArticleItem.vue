@@ -14,9 +14,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'ArticleItem'
-  };
+export default {
+  name: 'ArticleItem'
+}
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>

@@ -1,6 +1,6 @@
 # blog
 
-![](https://travis-ci.org/slzll/vue-blog.svg?branch=master)
+[![Build Status](https://travis-ci.org/slzll/vue-blog.svg?branch=master)](https://travis-ci.org/slzll/vue-blog)
 
 ## Project setup
 ```

@@ -1,37 +1,29 @@
 <template>
   <div id="app">
-	<Header/>
-	<main class="page_main">
-	  <router-view/>
-	</main>
-	<Footer/>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script>
-  import Header from '@/components/Header.vue';
-  import Footer from '@/components/Footer.vue';
-
-  export default {
-    components: {
-      Header,
-      Footer
+<style lang="scss">
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #42b983;
     }
-  };
-</script>
-
-<style lang="scss" rel="stylesheet/scss" scoped>
-  @import "./styles/mixin";
-
-  #app {
-	background-image: url("./assets/images/home_bg.jpeg");
-	background-size: 100% auto;
-	background-attachment: fixed;
   }
-
-  .page_main {
-	width: 100vw;
-	min-height: calc(100% - #{$headerHeight} - #{$footerHeight});
-	overflow: auto;
-  }
+}
 </style>
