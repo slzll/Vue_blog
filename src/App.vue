@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <AmbientCanvasBackground class="ambient-canvas-bg"/>
-    <Header class="app-header"/>
-    <router-view class="app-view"/>
+	<AmbientCanvasBackground class="ambient-canvas-bg"/>
+	<Header class="app-header"/>
+	<router-view class="app-view"/>
+	<custom-cursor/>
   </div>
 </template>
 <script>
-  import Header from '@/components/Header.vue';
+  import Header from '@/components/Header';
   import AmbientCanvasBackground from '@/components/AmbientCanvasBackground';
+  import CustomCursor from '@/components/CustomCursor';
 
   export default {
     components: {
       AmbientCanvasBackground,
-      Header
+      Header,
+      CustomCursor
     }
   };
 </script>
@@ -21,19 +24,21 @@
   @import "./styles/mixin";
 
   #app {
-    .ambient-canvas-bg {
-      position: relative;
-      z-index: 1;
-    }
+	cursor: none !important;
 
-    .app-header {
-      position: relative;
-      z-index: 2;
-    }
+	.ambient-canvas-bg {
+	  position: relative;
+	  z-index: 1;
+	}
 
-    .app-view {
-      position: relative;
-      z-index: 2;
-    }
+	.app-header {
+	  position: relative;
+	  z-index: 2;
+	}
+
+	.app-view {
+	  position: relative;
+	  z-index: 2;
+	}
   }
 </style>
