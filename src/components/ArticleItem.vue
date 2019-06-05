@@ -1,11 +1,19 @@
 <template>
   <li class="article_item">
-    <h3 class="article_title">{{itemData.title}}</h3>
+    <h3 class="article_title">
+      <router-link :to="{name: 'article', query: {Id: itemData._id}}">
+        {{itemData.title}}
+      </router-link>
+    </h3>
     <p class="article_desc">文章简介</p>
     <div class="article_info">
       <span class="article_time">{{itemData.created_date | day | date_format()}}</span>
       <div class="tag_list">
-        <a class="tag" v-for="item in itemData.tags" :key="item._id">{{item.name}}</a>
+        <router-link class="tag" v-for="item in itemData.tags"
+                     :to="{name: 'tag', query: {Id: item._id}}"
+                     :key="item._id">
+          {{item.name}}
+        </router-link>
       </div>
     </div>
   </li>

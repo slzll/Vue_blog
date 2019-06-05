@@ -1,15 +1,21 @@
 <template>
-  <div class="about-page">
-    <div class="container_24 about-page__container">
-      <h1>This is an about page</h1>
+  <div class="tag-page">
+    <div class="container_24 tag-page__container">
+      This is the tag page
     </div>
   </div>
 </template>
 
+<script>
+  export default {
+    name: 'Tag'
+  };
+</script>
+
 <style lang="scss" rel="stylesheet/scss" scoped>
   @import "../styles/mixin";
 
-  .about-page {
+  .tag-page {
     &__container {
       background-color: $white;
     }

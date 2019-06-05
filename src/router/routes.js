@@ -11,5 +11,20 @@ export default [
     path: '/about',
     name: 'about',
     component: _import('About')
+  },
+  {
+    path: '/category',
+    name: 'category',
+    component: _import('Category')
+  },
+  {
+    path: '/article',
+    name: 'article',
+    component: _import('Article')
+  },
+  {
+    path: '/tag',
+    name: 'tag',
+    component: _import('Tag')
   }
 ];

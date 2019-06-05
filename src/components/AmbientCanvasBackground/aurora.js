@@ -204,6 +204,3 @@ export function resize() {
   center[0] = 0.5 * canvas.a.width;
   center[1] = 0.5 * canvas.a.height;
 }
-
-window.addEventListener('load', setup);
-window.addEventListener('resize', resize);

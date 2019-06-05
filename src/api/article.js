@@ -7,3 +7,11 @@ export const GetArticleList = (params) => {
     params
   });
 };
+
+export const GetArticleDetail = (params) => {
+  return request({
+    url: '/api/article/getArticleDetail',
+    method: 'get',
+    params
+  });
+};

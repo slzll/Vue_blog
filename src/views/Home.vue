@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
-    <div class="container_24">
+  <a-layout class="home">
+    <a-layout-content>
       <article-list :article-data="articleData"></article-list>
-    </div>
-  </div>
+    </a-layout-content>
+  </a-layout>
 </template>
 
 <script>
