@@ -1,7 +1,11 @@
 <template>
   <a-layout class="home">
     <a-layout-content>
-      <article-list :article-data="articleData"></article-list>
+      <a-row>
+        <a-col :span="18" :offset="3">
+          <article-list :article-data="articleData"></article-list>
+        </a-col>
+      </a-row>
     </a-layout-content>
   </a-layout>
 </template>

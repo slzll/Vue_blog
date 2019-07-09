@@ -1,24 +1,26 @@
 <template>
   <main class="article-page">
-    <div class="container_24 article-page__container">
-      <h2 class="article-page__title">{{detail.title}}</h2>
-      <article class="article-content">
-        <a-layout>
-          <a-layout-content>
-            <vue-markdown class="markdown-container"
-                          ref="markdown"
-                          :toc="true"
-                          :source="detail.content"
-                          :postrender="postRender"
-                          @toc-rendered="tocRendered"
-            ></vue-markdown>
-          </a-layout-content>
-          <a-layout-sider width="250">
-            <div v-html="toc"></div>
-          </a-layout-sider>
-        </a-layout>
-      </article>
-    </div>
+    <a-row>
+      <a-col class="article-page__container" :span="18" :offset="3">
+        <h2 class="article-page__title">{{detail.title}}</h2>
+        <article class="article-content">
+          <a-layout>
+            <a-layout-content class="markdown-container">
+              <vue-markdown class="markdown-content"
+                            ref="markdown"
+                            :toc="true"
+                            :source="detail.content"
+                            :postrender="postRender"
+                            @toc-rendered="tocRendered"
+              ></vue-markdown>
+            </a-layout-content>
+            <a-layout-sider class="sider_container" width="250">
+              <div v-html="toc"></div>
+            </a-layout-sider>
+          </a-layout>
+        </article>
+      </a-col>
+    </a-row>
   </main>
 </template>
 
@@ -88,15 +90,21 @@
 
   .article-page {
     &__container {
-      background-color: $white;
-      padding: 20px;
+      margin-top: 30px;
+      background-color: #fff;
     }
 
     &__title {
       text-align: center;
+      padding: 20px;
     }
 
     .markdown-container {
+      background-color: #fff;
+      padding: 10px 20px;
+    }
+
+    .markdown-content {
       /deep/ {
         img {
           max-width: 100%;
@@ -134,6 +142,10 @@
           color: #dcdcdc;
         }
       }
+    }
+
+    .sider_container {
+      padding: 20px;
     }
   }
 </style>

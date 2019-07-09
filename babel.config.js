@@ -3,6 +3,10 @@ module.exports = {
     '@vue/app'
   ],
   plugins: [
-    ['import', { libraryName: 'antd', }]
+    ['import', {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: true
+    }]
   ]
 };

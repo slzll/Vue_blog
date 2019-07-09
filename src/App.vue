@@ -27,7 +27,7 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "./styles/mixin";
 
   #app {
@@ -46,6 +46,10 @@
     .app-view {
       position: relative;
       z-index: 2;
+    }
+
+    .ant-layout-footer {
+      padding: 0;
     }
   }
 </style>
