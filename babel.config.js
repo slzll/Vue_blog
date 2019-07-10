@@ -3,10 +3,9 @@ module.exports = {
     '@vue/app'
   ],
   plugins: [
-    ['import', {
-      libraryName: 'antd',
-      libraryDirectory: 'es',
-      style: true
-    }]
+    // ['import', {
+    //   libraryName: 'iview',
+    //   libraryDirectory: 'src/components'
+    // }]
   ]
 };

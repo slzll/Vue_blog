@@ -1,13 +1,9 @@
 <template>
-  <a-layout class="home">
-    <a-layout-content>
-      <a-row>
-        <a-col :span="18" :offset="3">
-          <article-list :article-data="articleData"></article-list>
-        </a-col>
-      </a-row>
-    </a-layout-content>
-  </a-layout>
+  <Row class="home">
+    <Col :span="18" :offset="3">
+      <article-list :article-data="articleData"></article-list>
+    </Col>
+  </Row>
 </template>
 
 <script>

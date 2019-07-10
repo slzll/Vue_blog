@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'BlogFooter',
   data () {
     return {
       thisYear: new Date().getFullYear()

@@ -1,24 +1,45 @@
 <template>
-  <header class="page-header" :class="{header_clear_bg: isTransparent}">
-    <a-row class="page-header__row" :gutter="16">
-      <a-col class="page-header__logo" :span="8">SLZLL</a-col>
-      <a-col class="page-header__nav" :span="16">
-        <router-link class="page-header__nl" to="/">Home</router-link>
-        <router-link class="page-header__nl" to="/category">Category</router-link>
-        <router-link class="page-header__nl" to="/tag">Tag</router-link>
-        <router-link class="page-header__nl" to="/about">About</router-link>
-      </a-col>
-    </a-row>
+  <header class="page-header">
+    <Row class="page-header__row" type="flex" justify="space-between">
+      <Col class="page-header__logo" :sm="{span: 18}" :md="{span: 8}">SLZLL</Col>
+      <Col class="page-header__nav" :sm="{span: 6}" :md="{span: 10}">
+        <header-menu v-if="!showDrawer"></header-menu>
+        <Icon v-else type="md-menu" size="24" @click.native="openDrawer = !openDrawer"/>
+        <Drawer class="menu-drawer__container" class-name="menu-drawer" :closable="false" v-model="openDrawer"
+                width="240">
+          <header-menu mode="vertical"></header-menu>
+        </Drawer>
+      </Col>
+    </Row>
   </header>
 </template>
 
 <script>
+  import HeaderMenu from './HeaderMenu';
+
   export default {
-    name: 'Header',
+    name: 'BlogHeader',
+    components: {
+      HeaderMenu
+    },
     data() {
       return {
-        isTransparent: true
+        mode: 'horizontal',
+        showDrawer: false,
+        openDrawer: false
       };
+    },
+    mounted() {
+      this.checkWidth();
+      window.addEventListener('resize', (e) => {
+        this.checkWidth();
+      });
+    },
+    methods: {
+      checkWidth() {
+        const { width } = window.screen;
+        this.showDrawer = width < 900;
+      }
     }
   };
 </script>
@@ -26,13 +47,6 @@
   @import "../styles/mixin";
 
   .page-header {
-    display: flex;
-    align-items: center;
-    height: $headerHeight;
-    background-color: $white;
-    border-bottom: 1px solid $border-color;
-    box-shadow: 0 0 20px 0 #333;
-
     &.header_clear_bg {
       background-color: transparent;
       border-bottom: none;
@@ -62,50 +76,16 @@
       color: #EEE;
       text-align: center;
       transition: all 400ms ease;
-
-      &:before, &:after {
-        content: attr(data-value);
-        position: absolute;
-        top: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0);
-        clip: rect(0, 0, 0, 0);
-      }
-
-      &:before {
-        left: -1px;
-        text-shadow: 1px 0 #ff3f1a;
-      }
-
-      &:after {
-        left: 1px;
-        text-shadow: -1px 0 #00a7e0;
-      }
-
-      &:hover {
-        &:before {
-          text-shadow: 4px 0 #ff3f1a;
-          animation: logo-loop-1 0.8s infinite ease-in-out alternate-reverse;
-        }
-
-        &:after {
-          text-shadow: -5px 0 #00a7e0;
-          animation: logo-loop-2 0.8s infinite ease-in-out alternate-reverse;
-        }
-      }
     }
 
     &__nav {
-      font-size: 20px;
       color: #fff;
       text-align: center;
-      display: grid;
-      grid: 1fr/1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 20px;
     }
 
-    &__nl {
+    /deep/ &__nl {
       color: #fff;
+      font-size: 20px;
 
       &:hover, &.router-link-exact-active {
         color: #42b983;
@@ -113,57 +93,13 @@
     }
   }
 
-  @keyframes logo-loop-1 {
-    0% {
-      clip: rect(36px, 9999px, 9px, 0);
-    }
+  .menu-drawer__container {
 
-    25% {
-      clip: rect(25px, 9999px, 99px, 0);
-    }
-
-    50% {
-      clip: rect(50px, 9999px, 102px, 0);
-    }
-
-    75% {
-      clip: rect(30px, 9999px, 92px, 0);
-    }
-
-    100% {
-      clip: rect(91px, 9999px, 98px, 0);
-    }
-  }
-
-  @keyframes logo-loop-2 {
-    0% {
-      top: -1px;
-      left: 1px;
-      clip: rect(65px, 9999px, 119px, 0);
-    }
-
-    25% {
-      top: -6px;
-      left: 4px;
-      clip: rect(79px, 9999px, 19px, 0);
-    }
-
-    50% {
-      top: -3px;
-      left: 2px;
-      clip: rect(68px, 9999px, 11px, 0);
-    }
-
-    75% {
-      top: 0;
-      left: -4px;
-      clip: rect(95px, 9999px, 53px, 0);
-    }
-
-    100% {
-      top: -1px;
-      left: -1px;
-      clip: rect(31px, 9999px, 149px, 0);
+    /deep/ {
+      .menu-drawer .ivu-drawer-body {
+        padding: 0;
+        background-color: #515a6e;
+      }
     }
   }
 </style>

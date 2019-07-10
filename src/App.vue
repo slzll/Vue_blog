@@ -2,27 +2,27 @@
   <div id="app">
     <!--<AmbientCanvasBackground class="ambient-canvas-bg"/>-->
     <!--<custom-cursor/>-->
-    <a-layout>
-      <a-layout-header>
-        <Header class="app-header"/>
-      </a-layout-header>
-      <a-layout-content>
-        <router-view class="app-view"/>
-      </a-layout-content>
-      <a-layout-footer>
-        <Footer/>
-      </a-layout-footer>
-    </a-layout>
+    <Layout>
+      <Header class="app-header">
+        <blog-header/>
+      </Header>
+      <Content class="app-view">
+        <router-view/>
+      </Content>
+      <Footer>
+        <blog-footer/>
+      </Footer>
+    </Layout>
   </div>
 </template>
 <script>
-  import Header from '@/components/Header';
-  import Footer from '@/components/Footer';
+  import BlogHeader from '@/components/Header';
+  import BlogFooter from '@/components/Footer';
 
   export default {
     components: {
-      Footer,
-      Header
+      BlogFooter,
+      BlogHeader
     }
   };
 </script>
@@ -41,6 +41,7 @@
     .app-header {
       position: relative;
       z-index: 2;
+      box-shadow: 0 0 20px 0 #333;
     }
 
     .app-view {
@@ -48,7 +49,7 @@
       z-index: 2;
     }
 
-    .ant-layout-footer {
+    .ivu-layout-footer {
       padding: 0;
     }
   }

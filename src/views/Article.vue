@@ -1,46 +1,37 @@
 <template>
-  <main class="article-page">
-    <a-row>
-      <a-col class="article-page__container" :span="18" :offset="3">
-        <h2 class="article-page__title">{{detail.title}}</h2>
-        <article class="article-content">
-          <a-layout>
-            <a-layout-content class="markdown-container">
-              <vue-markdown class="markdown-content"
-                            ref="markdown"
-                            :toc="true"
-                            :source="detail.content"
-                            :postrender="postRender"
-                            @toc-rendered="tocRendered"
-              ></vue-markdown>
-            </a-layout-content>
-            <a-layout-sider class="sider_container" width="250">
-              <div v-html="toc"></div>
-            </a-layout-sider>
-          </a-layout>
-        </article>
-      </a-col>
-    </a-row>
-  </main>
+  <Row class="article-page">
+    <Col class="article-page__container" span="18" offset="3">
+      <h2 class="article-page__title">{{detail.title}}</h2>
+      <article class="article-content">
+        <Layout>
+          <Content class="markdown-container">
+            <vue-markdown class="markdown-content"
+                          ref="markdown"
+                          :toc="true"
+                          :source="detail.content"
+                          :postrender="postRender"
+                          @toc-rendered="tocRendered"
+            ></vue-markdown>
+          </Content>
+          <Sider class="sider_container" width="250">
+            <div v-html="toc"></div>
+          </Sider>
+        </Layout>
+      </article>
+    </Col>
+  </Row>
 </template>
 
 <script>
   import Vue from 'vue';
   import VueMarkdown from 'vue-markdown';
-  import { Layout } from 'ant-design-vue';
   import { GetArticleDetail } from '@/api/article';
   import HighLight from '../plugins/highlightjs';
-  import ALayoutSider from 'ant-design-vue/es/layout/Sider';
 
-  const { Sider, Content } = Layout;
-  Vue.component(Layout.name, Layout);
-  Vue.component(Sider.name, Sider);
-  Vue.component(Content.name, Content);
   Vue.use(HighLight);
   export default {
     name: 'Article',
     components: {
-      ALayoutSider,
       'vue-markdown': VueMarkdown
     },
     data() {
@@ -92,6 +83,7 @@
     &__container {
       margin-top: 30px;
       background-color: #fff;
+      box-shadow: 0 0 20px 0 #ddd;
     }
 
     &__title {

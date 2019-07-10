@@ -1,9 +1,9 @@
 <template>
-  <div class="tag-page">
-    <div class="container_24 tag-page__container">
+  <Row class="tag-page">
+    <Col :span="18" :offset="3" class="tag-page__container">
       This is the tag page
-    </div>
-  </div>
+    </Col>
+  </Row>
 </template>
 
 <script>
@@ -17,6 +17,8 @@
 
   .tag-page {
     &__container {
+      margin-top: 30px;
+      padding: 20px;
       background-color: $white;
     }
   }

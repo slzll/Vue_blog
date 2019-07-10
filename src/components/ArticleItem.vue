@@ -1,11 +1,14 @@
 <template>
-  <li class="article_item">
+  <li class="article-item" :class="{has_img: !!itemData.img}">
+    <div class="article-item_img_container">
+      <img class="article-item_img" v-if="itemData.img" :src="itemData.img" alt="">
+    </div>
     <h3 class="article_title">
       <router-link :to="{name: 'article', query: {Id: itemData._id}}">
         {{itemData.title}}
       </router-link>
     </h3>
-    <p class="article_desc">文章简介</p>
+    <p class="article_desc">{{itemData.description}}</p>
     <div class="article_info">
       <span class="article_time">{{itemData.created_date | day | date_format()}}</span>
       <div class="tag_list">
@@ -33,11 +36,28 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
   @import "../styles/mixin";
 
-  .article_item {
+  .article-item {
     margin-top: 20px;
     background-color: $white;
     border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 0 20px 0 #ddd;
+
+    &.has_img {
+      .article-item_img_container {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+      }
+    }
+
+    &_img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
 
     .article_title {
       line-height: 2;

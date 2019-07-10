@@ -17,7 +17,8 @@ module.exports = {
     'quotes': 'off',
     'semi': 'off',
     'space-before-function-paren': 'off',
-    'one-var': 'off'
+    'one-var': 'off',
+    'vue/no-parsing-error': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint'
