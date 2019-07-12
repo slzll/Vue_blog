@@ -1,8 +1,11 @@
 language: node_js
 node_js:
-  - "10"
+  - '10'
 cache: yarn
 install:
   - yarn install
 script:
   - yarn test:unit
+after_success:
+  - ssh root@47.111.7.94 'cd /www/vue-blog/ && git pull && yarn install && yarn build'
+
