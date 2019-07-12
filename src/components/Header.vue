@@ -7,7 +7,7 @@
         <Icon v-else type="md-menu" size="24" @click.native="openDrawer = !openDrawer"/>
         <Drawer class="menu-drawer__container" class-name="menu-drawer" :closable="false" v-model="openDrawer"
                 width="240">
-          <header-menu mode="vertical"></header-menu>
+          <header-menu mode="vertical" theme="dark"></header-menu>
         </Drawer>
       </Col>
     </Row>
@@ -31,15 +31,16 @@
     },
     mounted() {
       this.checkWidth();
-      window.addEventListener('resize', (e) => {
-        this.checkWidth();
-      });
+      window.addEventListener('resize', this.checkWidth, false);
     },
     methods: {
       checkWidth() {
-        const { width } = window.screen;
+        const width = window.innerWidth;
         this.showDrawer = width < 900;
       }
+    },
+    beforeDestroy() {
+      window.removeEventListener('resize', this.checkWidth, false);
     }
   };
 </script>

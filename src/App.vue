@@ -41,12 +41,16 @@
     .app-header {
       position: relative;
       z-index: 2;
-      box-shadow: 0 0 20px 0 #333;
+      box-shadow: 0 0 10px 0 #333;
     }
 
     .app-view {
       position: relative;
       z-index: 2;
+    }
+
+    .ivu-layout-header {
+      background-image: linear-gradient(135deg, #3B2667 10%, #BC78EC 100%);
     }
 
     .ivu-layout-footer {

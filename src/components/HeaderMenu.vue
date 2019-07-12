@@ -1,5 +1,5 @@
 <template>
-  <Menu :mode="mode" theme="dark" active-name="home">
+  <Menu :mode="mode" :theme="theme" active-name="home" class="header-menu">
     <MenuItem name="home">
       <router-link class="page-header__nl" to="/">Home</router-link>
     </MenuItem>
@@ -22,11 +22,21 @@
       mode: {
         type: String,
         default: 'horizontal'
+      },
+      theme: {
+        type: String,
+        default: 'primary'
       }
     }
   };
 </script>
 
-<style scoped>
+<style lang="scss" rel="stylesheet/scss" scoped>
+  @import "../styles/mixin";
 
+  .header-menu {
+    &.ivu-menu-primary {
+      background: transparent;
+    }
+  }
 </style>

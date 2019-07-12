@@ -1,6 +1,6 @@
 <template>
   <Row class="home">
-    <Col :span="18" :offset="3">
+    <Col :md="{span: 18, offset: 3}" :sm="{span: 20, offset: 2}">
       <article-list :article-data="articleData"></article-list>
     </Col>
   </Row>

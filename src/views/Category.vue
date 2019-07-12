@@ -1,6 +1,6 @@
 <template>
   <Row class="category-page">
-    <Col class="category-page__container" :span="18" :offset="3">
+    <Col class="category-page__container" :md="{span: 18, offset: 3}">
       <ul class="category-list">
         <li v-for="item in categories" :key="item._id">
           <h1>{{item.name}}</h1>
