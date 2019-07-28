@@ -12,4 +12,4 @@ install:
 script:
   - yarn test:unit
 after_success:
-  - ssh root@47.111.7.94 'cd /www/vue-blog/ && git pull && yarn install && yarn build'
+  - ssh root@47.111.7.94 'cd /www/vue-blog/ && git pull && yarn install && npm run build'
