@@ -27,5 +27,5 @@ yarn run test
 yarn run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 修改记录
+1、修改package.json,修改原build命令为“node --max_old_space_size=1024 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build”，避免内存溢出
