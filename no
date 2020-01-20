@@ -1,0 +1,27 @@
+warning: LF will be replaced by CRLF in src/views/Article.vue.
+The file will have its original line endings in your working directory
+[1mdiff --git a/public/index.html b/public/index.html[m
+[1mindex 7305366..dc81471 100644[m
+[1m--- a/public/index.html[m
+[1m+++ b/public/index.html[m
+[36m@@ -4,6 +4,7 @@[m
+     <meta charset="utf-8">[m
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">[m
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">[m
+[32m+[m[32m    <meta name="referrer" content="no-referrer" >[m
+     <link rel="icon" href="<%= BASE_URL %>favicon.ico">[m
+     <title>vue-blog</title>[m
+   </head>[m
+[1mdiff --git a/src/views/Article.vue b/src/views/Article.vue[m
+[1mindex 210cb77..845ca88 100644[m
+[1m--- a/src/views/Article.vue[m
+[1m+++ b/src/views/Article.vue[m
+[36m@@ -13,7 +13,7 @@[m
+                           @toc-rendered="tocRendered"[m
+             ></vue-markdown>[m
+           </Content>[m
+[31m-          <Sider v-if="showSider" class="sider_container" width="200">[m
+[32m+[m[32m          <Sider v-if="showSider && toc" class="sider_container" width="200">[m
+             <div v-html="toc" ref="toc" @click="customAnchor"></div>[m
+           </Sider>[m
+         </Layout>[m

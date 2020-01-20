@@ -13,7 +13,7 @@
                           @toc-rendered="tocRendered"
             ></vue-markdown>
           </Content>
-          <Sider v-if="showSider" class="sider_container" width="200">
+          <Sider v-if="showSider && toc" class="sider_container" width="200">
             <div v-html="toc" ref="toc" @click="customAnchor"></div>
           </Sider>
         </Layout>
