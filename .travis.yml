@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - '10'
+  - "10"
 cache: yarn
 before_install:
-  - openssl aes-256-cbc -K $encrypted_f96bfc023ea0_key -iv $encrypted_f96bfc023ea0_iv
+  - openssl aes-256-cbc -K $encrypted_180482c19374_key -iv $encrypted_180482c19374_iv
     -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host 47.111.7.94\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
@@ -12,5 +12,4 @@ install:
 script:
   - yarn test:unit
 after_success:
-  - ssh root@47.111.7.94 'cd /www/vue-blog/ && git pull && yarn install && yarn build'
-
+  - ssh root@47.111.7.94 'cd /www/vue-blog/ && git pull && yarn install && npm run build'
