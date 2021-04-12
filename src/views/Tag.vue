@@ -40,7 +40,7 @@
         }
       },
       async getArticles(tagId) {
-        let res = await GetArticleList({ tags: [tagId] });
+        let res = await GetArticleList({ tagId: tagId });
         if (res.success) {
           console.log(res);
           this.articles = res.data;

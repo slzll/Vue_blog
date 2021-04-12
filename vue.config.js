@@ -20,6 +20,7 @@ module.exports = {
   },
   devServer: {
     proxy: 'https://www.slzll.com',
+    // proxy: 'http://localhost:9090',
     port: 8088
   },
   chainWebpack: config => {

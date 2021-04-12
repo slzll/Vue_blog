@@ -36,7 +36,7 @@
           this.categories = res.data;
           for (let i = 0; i < this.categories.length; i++) {
             let item = this.categories[i];
-            let articleData = await GetArticleList({ category: item._id });
+            let articleData = await GetArticleList({ categoryId: item._id });
             if (articleData.success) {
               this.categories[i] = {
                 ...this.categories[i],
